@@ -41,6 +41,10 @@ snappymodule = Extension('snappy._snappy',
                          libraries=['snappy'],
                          sources=['snappy/snappymodule.cc', 'snappy/crc32c.c'])
 
+
+snappymodule.include_dirs = ["vendor/include"]
+snappymodule.library_dirs = ["vendor/lib"]
+
 ext_modules = [snappymodule]
 packages = ['snappy']
 install_requires = []
